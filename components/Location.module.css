@@ -1,0 +1,84 @@
+.location {
+  padding: 7rem 0;
+  background: var(--color-bg);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.header .section-sub { margin: 0 auto; }
+.italic { font-style: italic; color: var(--color-primary-d); }
+
+.mapWrapper {
+  position: relative;
+  height: 480px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+}
+.mapWrapper iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Address overlay card */
+.addressCard {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: rgba(253, 250, 246, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: var(--shadow-md);
+  color: var(--color-text-muted);
+  max-width: 320px;
+}
+.addressCard > svg { color: var(--color-primary-d); flex-shrink: 0; }
+.addressCard > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+}
+.addressCard strong {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  display: block;
+}
+.addressCard span {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.directionsLink {
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition);
+}
+.directionsLink:hover {
+  background: var(--color-gold);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .mapWrapper { height: 360px; }
+  .addressCard { left: 0.75rem; right: 0.75rem; max-width: none; flex-wrap: wrap; }
+  .location { padding: 5rem 0; }
+}

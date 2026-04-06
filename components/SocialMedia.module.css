@@ -1,0 +1,113 @@
+.social {
+  padding: 7rem 0;
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-bg) 100%);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.copy { display: flex; flex-direction: column; gap: 1rem; }
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.15;
+}
+.sub {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  max-width: 420px;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  color: white;
+  text-decoration: none;
+  transition: transform var(--transition), box-shadow var(--transition);
+  min-height: 180px;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+}
+
+.cardGrad {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    var(--g1, #333) 0%,
+    var(--g2, #444) 25%,
+    var(--g3, #555) 50%,
+    var(--g4, #444) 75%,
+    var(--g5, #333) 100%
+  );
+  z-index: 0;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-align: center;
+}
+.platform {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.handle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-style: italic;
+}
+.cta {
+  font-size: 0.78rem;
+  font-weight: 500;
+  opacity: 0.85;
+  margin-top: 0.25rem;
+  letter-spacing: 0.04em;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .sub { max-width: 100%; }
+}
+@media (max-width: 400px) {
+  .cards { grid-template-columns: 1fr; }
+}
